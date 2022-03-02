@@ -1,8 +1,25 @@
 from django.urls import path
-
 from . import views
+from django.urls import include, re_path
 
 urlpatterns = [
-    path('', views.ListTodo.as_view()),
-    path('<int:pk>/', views.DetailTodo.as_view()),
+    re_path(r'^dog-list/$', 
+        views.ListDogs.as_view(), 
+        name=views.ListDogs.name),
+
+
+    re_path(r'^dog-list/(?P<pk>[0-9]+)/$', 
+        views.DetailDog.as_view(),
+        name=views.DetailDog.name),
+
+    re_path(r'^breed-list/$', 
+        views.ListBreeds.as_view(), 
+        name=views.ListBreeds.name),
+
+
+    re_path(r'^breed-list/(?P<pk>[0-9]+)/$', 
+        views.DetailBreed.as_view(),
+        name=views.DetailBreed.name),
+
+    
 ]

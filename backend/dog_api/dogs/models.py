@@ -73,8 +73,8 @@ class Dog(models.Model):
         default=MALE,
     )
     color = models.CharField(max_length=50, blank=False, default='')
-    favoritefood = models.CharField(max_length=50, blank=False, default='')
-    favoritetoy = models.CharField(max_length=50, blank=False, default='')
+    favoriteFood = models.CharField(max_length=50, blank=False, default='')
+    favoriteToy = models.CharField(max_length=50, blank=False, default='')
 
     class Meta:
         ordering = ('name',)
