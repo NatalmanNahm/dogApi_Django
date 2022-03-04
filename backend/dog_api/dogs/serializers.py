@@ -9,6 +9,7 @@ class DogSerializer(serializers.ModelSerializer):
         choices=Dog.GENDER_CHOICES)
     class Meta:
         fields = (
+            'id',
             'name',
             'age',
             'breed',
@@ -24,6 +25,7 @@ class BreedSerializer(serializers.ModelSerializer):
         choices=Breed.SIZE_CHOICE)
     class Meta:
         fields = (
+            'id',
             'name',
             'size',
             'friendliness',
